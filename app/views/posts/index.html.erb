@@ -1,9 +1,9 @@
 <h1>Blog Posts</h1>
+<% @posts.each do |post| %>
+
 <figure>
-  <h3>Sample Post One</h3>
-  <p><%= @content_first %></p>
+  <h3><%= post.title %></h3>
+  <p><%= post.body %></p>
 </figure>
-<figure>
-  <h3>Sample Post Twe</h3>
-  <p><%= @content_second %></p>
-</figure>
+
+<% end %>

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # get 'categories/index'
+  # get 'categories/edit'
+  # get 'categories/new'
+  # get 'categories/show'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root to: 'home#index'
