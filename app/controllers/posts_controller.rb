@@ -23,11 +23,18 @@ class PostsController < ApplicationController
   end
 
   def edit
-  
+    @post = Post.find(params[:id])
   end
 
   def update
-  
+    params.permit!
+    @post = Post.find(params[:id])
+
+    if @post.update(params[:post])
+      redirect_to post_path, :notice => "Your post has been updated"
+    else
+      render "edit"
+    end
   end
 
   def destroy
