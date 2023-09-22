@@ -1,10 +1,18 @@
-<p style="color: green"><%= notice %></p>
+<h2><%= @title %></h2>
 
-<%= render @category %>
+<ul>
+  <% if @posts.each do |post| %>
+    <li>
+      <%= link_to post.title, post %>
+    </li>
+  <% end.empty? %>
+    <li>No posts in this category.</li>
+  <% end%>
+</ul>
+
 
 <div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
-
-  <%= button_to "Destroy this category", @category, method: :delete %>
+  <%= link_to "Back", categories_path %>
+  |
+  <%= link_to "Delete", @category, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 </div>
